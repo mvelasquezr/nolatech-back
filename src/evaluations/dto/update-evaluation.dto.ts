@@ -3,7 +3,4 @@ import { IsString } from 'class-validator';
 import { CreateEvaluationDto } from './create-evaluation.dto';
 
 
-export class UpdateEvaluationDto extends PartialType(CreateEvaluationDto) {
-  @IsString()
-  _id:string
-}
+export class UpdateEvaluationDto extends PartialType(CreateEvaluationDto) {}
