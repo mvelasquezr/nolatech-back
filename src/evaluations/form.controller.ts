@@ -17,7 +17,7 @@ import { FormService } from './form.service';
 
 @ApiTags('Form')
 @Controller('form')
-export class FromController {
+export class FormController {
   constructor(private readonly formService: FormService) {}
 
   @Post()
