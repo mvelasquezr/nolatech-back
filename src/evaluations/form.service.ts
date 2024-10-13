@@ -7,7 +7,7 @@ import { CreateFormDto } from './dto/create-form.dto';
 import { UpdateFormDto } from './dto/update-form.dto';
 
 @Injectable()
-export class EvaluationsService {
+export class FormService {
   constructor(
     @InjectModel(Form.name) private formModel: Model<Form>,
     @InjectModel(Evaluation.name) private evaluationModel: Model<Evaluation>,    
@@ -33,11 +33,12 @@ export class EvaluationsService {
   }
 
   async update(
+    id:string,
     input: UpdateFormDto,
   ): Promise<Form> {
-    await this.validate(input._id)
+    await this.validate(id)
     return await this.formModel.findByIdAndUpdate(
-      input._id,
+      id,
       input,
       { new: true },
     );
