@@ -20,4 +20,4 @@ export class Form {
   active: boolean;
 }
 
-export const EvaluationSchema = SchemaFactory.createForClass(Form);
+export const FormSchema = SchemaFactory.createForClass(Form);
