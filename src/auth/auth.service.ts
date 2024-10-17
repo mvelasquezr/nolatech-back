@@ -33,7 +33,8 @@ export class AuthService {
     }
     delete user.password
     delete user.employee   
-    const token = await this.jwtService.signAsync(user);
+    console.log(user)
+    const token = await this.jwtService.signAsync({_id:user._id, role: user.role, email:user.email});
     return {
       token,
       user,
